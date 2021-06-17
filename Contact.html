@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <title>Contact Me</title>
+    <link rel="stylesheet" type="text/css" href="./Contact.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDIzwqXVhSQmfECXqmc1SDgdQAEbRSW3x4",
+    authDomain: "contact-me-37acc.firebaseapp.com",
+    projectId: "contact-me-37acc",
+    storageBucket: "contact-me-37acc.appspot.com",
+    messagingSenderId: "18217109809",
+    appId: "1:18217109809:web:4fd68abdef700436004810"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700i" rel="stylesheet">
+<style>
+
+* {
+box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html, body {
+height: 100%;
+overflow: hidden;
+}
+.page {
+height: 100%;
+background-color: #584e4a;
+}
+.content {
+transform-origin: top left;
+transition: transform 0.7s cubic-bezier(1, 0.005, 0.24, 1);
+background-color: #f0f0f0;
+}
+.content_inner {
+overflow-y: auto;
+}
+/* basically all styling from now on */
+.menu_toggle {
+z-index: 900;
+position: fixed;
+top: 0;
+left: 0;
+display: block;
+cursor: pointer;
+width: 100px;
+height: 80px;
+background-color: #f37272;
+border-bottom-right-radius: 100%;
+}
+.menu_toggle:active i {
+opacity: 0.8;
+}
+.menu_toggle i {
+color: #f0f0f0;
+}
+.menu_toggle .menu_open, .menu_toggle .menu_close {
+position: absolute;
+top: 50%;
+left: 50%;
+margin-top: -15px;
+margin-left: -12px;
+transition: transform 0.7s cubic-bezier(1, 0.005, 0.24, 1);
+}
+.menu_toggle .menu_open {
+transform-origin: -100px -100px;
+}
+.menu_toggle .menu_close {
+transform: rotate(20deg);
+transform-origin: -100px -160px;
+}
+.menu_items {
+position: fixed;
+bottom: 0;
+left: 50px;
+list-style-type: none;
+margin: 0;
+padding: 0;
+}
+.menu_items li {
+height: 60px;
+margin-bottom: 30px;
+transform: translateX(-300px);
+transition: transform 0.7s 0s cubic-bezier(1, 0.005, 0.24, 1);
+}
+.menu_items li:nth-child(2) {
+margin-left: 40px;
+}
+.menu_items li:nth-child(3) {
+margin-left: 80px;
+}
+.menu_items a {
+display: block;
+text-decoration: none;
+text-transform: uppercase;
+letter-spacing: 2px;
+color: #a4a4a4;
+transition: color 0.2s;
+}
+.menu_items a .icon {
+position: relative;
+display: inline-block;
+margin-right: 25px;
+color: #f0f0f0;
+}
+.menu_items a .icon:after {
+position: absolute;
+top: 50%;
+left: 50%;
+content: '';
+display: block;
+width: 60px;
+height: 60px;
+margin-left: -33px;
+margin-top: -32px;
+border-radius: 100%;
+border: 2px solid #f0f0f0;
+transition: border-color 0.2s;
+}
+.menu_items a:hover {
+color: #f0f0f0;
+}
+.menu_items a:hover .icon:after {
+border-color: #f37272;
+}
+.menu_items a:active .icon {
+color: #f37272;
+}
+/* Let's open up the menu */
+
+.shazam .content {
+transform: rotate(-30deg);
+}
+.shazam .menu_open {
+transform: rotate(-20deg);
+}
+.shazam .menu_close {
+transform: rotate(0);
+}
+.shazam .menu_items li {
+transform: translateX(0);
+transition: transform 0.35s 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.shazam .menu_items li:nth-child(2) {
+transition-delay: 0.47s;
+}
+.shazam .menu_items li:nth-child(3) {
+transition-delay: 0.48s;
+}
+h1 {
+padding-bottom: 15px;
+border-bottom: 1px solid #ddd;
+}
+body {
+color: #584e4a;
+}
+
+</style>
+</head>
+<body>
+    
+
+
+    <div class="page">
+        <span class="menu_toggle">
+          <i class="menu_open fa fa-bars fa-lg"></i>
+          <i class="menu_close fa fa-times fa-lg"></i>
+        </span>
+        <ul class="menu_items">
+          <li><a href="#"><i class="icon fa fa-home fa-2x"></i> Home</a></li>
+          <li><a href="#"><i class="icon fa fa-phone fa-2x"></i> About</a></li>
+          <li><a href="#"><i class="icon fa fa-heart fa-2x"></i> Projects</a></li>
+        </ul>
+        <main class="content">
+          <div class="content_inner">
+             
+    <section>
+        <div class = "blob1"></div>
+        <div class = "blob2"></div>
+        <div class = "container" method = "post" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSejjOV5qaMrKxnNq1GIZsP2c_VPuv8IMDyahR8AI_7SEHot3g/formResponse">
+            <h3>Feel Free To Contact Me </h3>
+        <div class = "row100">
+            <div class = "col">
+                <div class = "inputBox">
+                    <input type="text" name ="" id="FirstName" required="required">
+                    <span class = "text">First Name</span>
+                    <span class = "line"></span>
+                </div>
+            </div>
+        </div>
+    <div class = "row100">
+            <div class = "col">
+                <div class = "inputBox">
+                    <input type="text"  name ="" id="LastName" required="required">
+                    <span class = "text">Last Name</span>
+                    <span class = "line"></span>
+                </div>
+            </div>
+    </div>
+    <div class = "row100">
+            <div class = "col">
+                <div class = "inputBox">
+                    <input type="text" name=""  id="Email" required='required'>
+                    <span class = "text">Email</span>
+                    <span class = "line"></span>
+                </div>
+            </div>
+    </div>
+    <div class = "row100">
+            <div class = "col">
+                <div class = "inputBox">
+                    <input type="text" name=""  id="PhNo" required='required'>
+                    <span class = "text">Mobile Number</span>
+                    <span class = "line"></span>
+                </div>
+            </div>
+    </div>
+    <div class = "row100">
+            <div class = "col">
+                <div class = "inputBox">
+                    <input type="text" name=""  id="Message" required='required'>
+                    <span class = "text">Message</span>
+                    <span class = "line"></span>
+                </div>
+            </div>
+    </div>
+    
+    <div class = "row100">
+        <div class = "col">
+            <div class = "inputBox">
+                <input type="text" name=""  id="Feedback" required='required'>
+                <span class = "text">Feedback on "My Portfolio"</span>
+                <span class = "line"></span>
+            </div>
+        </div>
+</div>
+    <div class = "row100">
+            <div class = "col">
+                <div class="SendBtn"   onClick="allFunction()" >
+                    <h2 name="submit">Send</h2>
+                    <h2>Send</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="progressbar"></div>
+    <div id="scrollPath"></div>
+
+
+                    </section>
+            </div>
+        </main>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+        let progress = document.getElementById("progressbar");
+        let totalHeight = document.body.scrollHeight - window.innerHeight;
+        window.onscroll = function(){
+            let progressHeight = (window.pageYOffset / totalHeight) * 100;
+            progress.style.height = progressHeight + "%";
+        }
+    </script>
+
+    <script type="text/javascript" src="vanilla-tilt.js"></script>
+    <script>
+    	VanillaTilt.init(document.querySelectorAll(".container"), {
+		max: 30,
+		speed: 200
+	});
+    </script>
+      <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+      <script>
+          // elements
+      var $page = $('.page');
+      
+      $('.menu_toggle').on('click', function(){
+        $page.toggleClass('shazam');
+      });
+      $('.content').on('click', function(){
+        $page.removeClass('shazam');
+      });
+          
+      </script>
+
+
+
+    <script>
+        var FirstName = document.getElementById("FirstName");
+        var LastName = document.getElementById("LastName");
+        var Email = document.getElementById("Email");
+        var PhNo = document.getElementById("PhNo");
+        var Message = document.getElementById("Message");
+        var Feedback = document.getElementById("Feedback");
+        var newPostKey = firebase.database().ref().child('posts').push().key;
+        var database = firebase.database;
+        
+
+        
+        function setup(){
+          var ref = database.ref('names/' + newPostKey);
+          ref.on('value', gotData, errData);
+        
+          database = firebase.database;
+        }
+        
+        function Data() {
+            FirstName = document.getElementById("FirstName").value;
+            LastName = document.getElementById("LastName").value;
+            Email = document.getElementById("Email").value;
+            PhNo = document.getElementById("PhNo").value;
+            Message = document.getElementById("Message").value;
+            Feedback = document.getElementById("Feedback").value;
+        }
+        
+        function allFunction(){
+          Data();
+          writeUserData();
+        }
+        
+          function writeUserData() {
+            firebase.database().ref('names/' + newPostKey).set({
+              FirstName: FirstName,
+              LastName: LastName,
+              Email: Email,
+              PhNo: PhNo,
+              Message: Message,
+              Feedback: Feedback
+            });
+          }
+  
+          
+        </script>
+
+
+
+
+
+
+
+
+</body>
+</html>
